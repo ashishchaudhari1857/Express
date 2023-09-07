@@ -1,8 +1,11 @@
-
- const  express=  require("express");
+const  express=  require("express");
+const bodyParser=require("body-parser");
  const  path=  require("path");
- const  home=require('./Routes/test.js')
-   const app=express();
+ const  shop=require('./Routes/test.js')
+const admin=require('./Routes/admin.js')
+ const app=express();
+
+ app.use(bodyParser.urlencoded({extended:false}))
   // app.use(express.static(path.join(__dirname,"public")))
   // const ahishmiddleware =(req,res,next )=>{
   //   console.log("ahsihmiddle")
@@ -12,7 +15,11 @@
   //   res.send("welcome to home" +req.params.name)
   //  })
 // 
-  app.use("/" ,home)//
+  app.use("/" ,shop)//
+  app.use("/" ,admin)//
+  app.use('/',(req, res,next)=>{
+    res.status(404).send("<h1>Page Not Found</h1>")
+  })
 
 //    app.get("/exp" ,(req ,res)=>{
 //     //   res.send("ashish")
