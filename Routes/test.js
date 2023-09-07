@@ -1,12 +1,23 @@
 const express=require('express')
 const router=express.Router();
-
+const bodyParser=require("body-parser");
 const path=require('path')
-const blog=require("../blogs/blog")
+const blog=require("../blogs/blog");
 router.get('/', (req, res)=>{
    res.sendFile(path.join(__dirname ,"../template/data.html" ))
 })
 
+ router.use(bodyParser.urlencoded({extended:false}))
+ router.post('/product', (req, res)=>{
+  console.log(req.body.title);
+   res.redirect('/') 
+  })
+
+
+ router.get('/form', (req, res)=>{
+ res.sendFile(path.join(__dirname ,"../template/form.html" ))
+     
+})
 router.get('/blogs', (req, res)=>{
      blog.forEach(element => {
       console.log(element)

@@ -11,8 +11,8 @@
   //  app.get("/home/:name" ,(req ,res)=>{
   //   res.send("welcome to home" +req.params.name)
   //  })
-
-  app.use("/" ,home)
+// 
+  app.use("/" ,home)//
 
 //    app.get("/exp" ,(req ,res)=>{
 //     //   res.send("ashish")
