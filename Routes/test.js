@@ -4,7 +4,7 @@ const bodyParser=require("body-parser");
 const path=require('path')
 const blog=require("../blogs/blog");
 router.get('/', (req, res)=>{
-   res.sendFile(path.join(__dirname ,"../template/data.html" ))
+   res.sendFile(path.join(__dirname ,"../views/data.html" ))
 })
 
  
@@ -12,7 +12,7 @@ router.get('/blogs', (req, res)=>{
      blog.forEach(element => {
       console.log(element)
      });
-   res.sendFile(path.join(__dirname ,"../template/data.html" ))
+   res.sendFile(path.join(__dirname ,"../views/data.html" ))
 })
 
 router.get('/blogpost/:id', (req, res)=>{
@@ -22,7 +22,7 @@ router.get('/blogpost/:id', (req, res)=>{
     })
     console.log(item)
     res.send(item)
-//  res.sendFile(path.join(__dirname ,"../template/data.html" ))
+//  res.sendFile(path.join(__dirname ,"../views/data.html" ))
 })
 
 

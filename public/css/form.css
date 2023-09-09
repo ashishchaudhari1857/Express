@@ -1,0 +1,40 @@
+
+.form-box{
+    width: 50%;
+    height: 13rem;
+    border: 1px solid black;
+    margin: auto;
+    background-color: rgb(219, 106, 185);
+    margin-top: 2%;
+}
+h1{
+    text-align: center;
+    padding: 1rem;
+}
+
+.form label{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+ .form-input{
+    width: 90%;
+    margin: auto;
+
+ }
+.form-control{
+    width: 100%;
+    margin: auto;
+    border-radius: 4px;
+    padding: .2rem;
+}
+.btn{
+    margin: auto;
+    margin-top: 1%;
+    display: flex;
+    border-radius: 5px;
+    font-size: medium;
+}
+
+.btn:hover,
+.btn:active{
+  background-color: blue;
+}

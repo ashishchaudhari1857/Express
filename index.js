@@ -6,6 +6,7 @@ const admin=require('./Routes/admin.js')
  const app=express();
 
  app.use(bodyParser.urlencoded({extended:false}))
+ app.use(express.static(path.join(__dirname,'public')))
   // app.use(express.static(path.join(__dirname,"public")))
   // const ahishmiddleware =(req,res,next )=>{
   //   console.log("ahsihmiddle")
@@ -17,8 +18,9 @@ const admin=require('./Routes/admin.js')
 // 
   app.use("/" ,shop)//
   app.use("/" ,admin)//
+
   app.use('/',(req, res,next)=>{
-    res.status(404).send("<h1>Page Not Found</h1>")
+    res.status(404).sendFile(path.join(__dirname,'./','views','404.html'))
   })
 
 //    app.get("/exp" ,(req ,res)=>{
