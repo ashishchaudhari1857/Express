@@ -4,7 +4,7 @@ const bodyParser=require("body-parser");
  const  shop=require('./Routes/test.js')
 const admin=require('./Routes/admin.js')
  const app=express();
-
+const ErrorController=require('./controller/404')
  app.use(bodyParser.urlencoded({extended:false}))
  app.use(express.static(path.join(__dirname,'public')))
   // app.use(express.static(path.join(__dirname,"public")))
@@ -19,9 +19,7 @@ const admin=require('./Routes/admin.js')
   app.use("/" ,shop)//
   app.use("/" ,admin)//
 
-  app.use('/',(req, res,next)=>{
-    res.status(404).sendFile(path.join(__dirname,'./','views','404.html'))
-  })
+  app.use('/',ErrorController.E404)
 
 //    app.get("/exp" ,(req ,res)=>{
 //     //   res.send("ashish")
