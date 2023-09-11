@@ -6,6 +6,7 @@ const admin=require('./Routes/admin.js')
  const app=express();
 const ErrorController=require('./controller/404')
  app.use(bodyParser.urlencoded({extended:false}))
+ app.use(bodyParser.json());
  app.use(express.static(path.join(__dirname,'public')))
   // app.use(express.static(path.join(__dirname,"public")))
   // const ahishmiddleware =(req,res,next )=>{
